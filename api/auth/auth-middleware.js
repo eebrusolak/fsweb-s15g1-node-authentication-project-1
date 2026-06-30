@@ -1,3 +1,5 @@
+
+
 /*
   Kullanıcının sunucuda kayıtlı bir oturumu yoksa
 

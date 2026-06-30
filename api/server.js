@@ -1,6 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
+const session = require("express-session");
 
 /**
   Kullanıcı oturumlarını desteklemek için `express-session` paketini kullanın!
@@ -20,6 +21,15 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
+
+server.use(
+  session({
+    name: "cikolatacips",
+    secret: "super-secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+)
 
 server.get("/", (req, res) => {
   res.json({ api: "up" });
