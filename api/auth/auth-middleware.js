@@ -1,4 +1,4 @@
-
+const users = require("../users/users-model");
 
 /*
   Kullanıcının sunucuda kayıtlı bir oturumu yoksa
@@ -8,8 +8,14 @@
     "message": "Geçemezsiniz!"
   }
 */
-function sinirli() {
-
+function sinirli(req, res, next) {
+  if(req.session.user) {
+    next();
+  } else {
+    res.status(401).json({
+      message: "Geçemezsiniz",
+    })
+  }
 }
 
 /*
@@ -20,7 +26,16 @@ function sinirli() {
     "message": "Username kullaniliyor"
   }
 */
-function usernameBostami() {
+function usernameBostami(req, res, next) {
+  const [user] = await users.goreBul({username: req.body.username});,
+
+  if(user) {
+    res.status(422).json({
+      message: "Username kullaniliyor",
+    })
+  } else{
+    next();m
+  }
 
 }
 
@@ -32,8 +47,17 @@ function usernameBostami() {
     "message": "Geçersiz kriter"
   }
 */
-function usernameVarmi() {
+function usernameVarmi(req, res, next) {
+  const [user] = await users.goreBul({username: req.body.username});
 
+  if(user) {
+    req.user = user;
+    next();
+  } else {
+    res.status(401).json({
+      message: "Geçersiz kriter",
+    })
+  }
 }
 
 /*
@@ -44,8 +68,22 @@ function usernameVarmi() {
     "message": "Şifre 3 karakterden fazla olmalı"
   }
 */
-function sifreGecerlimi() {
+function sifreGecerlimi(req, res, next) {
+  const {password} = req.body;
 
+  if(password && password.lenght > 3) {
+    next();
+  } else {
+    res.status(422).json({
+      message: "Şifre 3 karakterden fazla olmalı",
+    })
+  }
 }
 
 // Diğer modüllerde kullanılabilmesi için fonksiyonları "exports" nesnesine eklemeyi unutmayın.
+module.export = {
+  sinirli,
+  usernameBostami,
+  usernameVarmi,
+  sifreGecerlimi,
+}

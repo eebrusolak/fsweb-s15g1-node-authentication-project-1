@@ -1,5 +1,11 @@
 // `checkUsernameFree`, `checkUsernameExists` ve `checkPasswordLength` gereklidir (require)
 // `auth-middleware.js` deki middleware fonksiyonları. Bunlara burda ihtiyacınız var!
+const router = require("express").Router();
+const bcrypt = require("bcryptjs");
+
+const users = require("../users/users-model");
+
+
 
 
 /**
