@@ -1,89 +1,55 @@
 const users = require("../users/users-model");
 
-/*
-  Kullanıcının sunucuda kayıtlı bir oturumu yoksa
-
-  status: 401
-  {
-    "message": "Geçemezsiniz!"
-  }
-*/
 function sinirli(req, res, next) {
-  if(req.session.user) {
+  if (req.session.user) {
     next();
   } else {
     res.status(401).json({
-      message: "Geçemezsiniz",
-    })
+      message: "Geçemezsiniz!",
+    });
   }
 }
 
-/*
-  req.body de verilen username halihazırda veritabanında varsa
+async function usernameBostami(req, res, next) {
+  const [user] = await users.goreBul({ username: req.body.username });
 
-  status: 422
-  {
-    "message": "Username kullaniliyor"
-  }
-*/
-function usernameBostami(req, res, next) {
-  const [user] = await users.goreBul({username: req.body.username});,
-
-  if(user) {
+  if (user) {
     res.status(422).json({
       message: "Username kullaniliyor",
-    })
-  } else{
-    next();m
+    });
+  } else {
+    next();
   }
-
 }
 
-/*
-  req.body de verilen username veritabanında yoksa
+async function usernameVarmi(req, res, next) {
+  const [user] = await users.goreBul({ username: req.body.username });
 
-  status: 401
-  {
-    "message": "Geçersiz kriter"
-  }
-*/
-function usernameVarmi(req, res, next) {
-  const [user] = await users.goreBul({username: req.body.username});
-
-  if(user) {
+  if (user) {
     req.user = user;
     next();
   } else {
     res.status(401).json({
       message: "Geçersiz kriter",
-    })
+    });
   }
 }
 
-/*
-  req.body de şifre yoksa veya 3 karakterden azsa
-
-  status: 422
-  {
-    "message": "Şifre 3 karakterden fazla olmalı"
-  }
-*/
 function sifreGecerlimi(req, res, next) {
-  const {password} = req.body;
+  const { password } = req.body;
 
-  if(password && password.lenght > 3) {
+  if (password && password.length > 3) {
     next();
   } else {
     res.status(422).json({
       message: "Şifre 3 karakterden fazla olmalı",
-    })
+    });
   }
 }
 
-// Diğer modüllerde kullanılabilmesi için fonksiyonları "exports" nesnesine eklemeyi unutmayın.
-module.export = {
+module.exports = {
   sinirli,
   usernameBostami,
   usernameVarmi,
   sifreGecerlimi,
-}
+};
