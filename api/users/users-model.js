@@ -1,20 +1,17 @@
 const db = require("../../data/db-config");
 
-
 /**
   tüm kullanıcıları içeren bir DİZİ ye çözümlenir, tüm kullanıcılar { user_id, username } içerir
  */
 function bul() {
-  return db("users").select("user_id","username");
+  return db("users").select("user_id", "username");
 }
 
 /**
   verilen filtreye sahip tüm kullanıcıları içeren bir DİZİ ye çözümlenir
  */
 function goreBul(filtre) {
-  return db("users")
-  .where(filtre)
-  .select("user_id","username")
+  return db("users").where(filtre);
 }
 
 /**
@@ -22,15 +19,18 @@ function goreBul(filtre) {
  */
 function idyeGoreBul(user_id) {
   return db("users")
+    .where({ user_id })
     .first()
-    .where({user_id}).select("user_id", "username")
+    .select("user_id", "username");
 }
 
 /**
   yeni eklenen kullanıcıya çözümlenir { user_id, username }
  */
-function ekle(user) {
+async function ekle(user) {
   const [user_id] = await db("users").insert(user);
+
+  return idyeGoreBul(user_id);
 }
 
 // Diğer modüllerde kullanılabilmesi için fonksiyonları "exports" nesnesine eklemeyi unutmayın.
@@ -39,4 +39,4 @@ module.exports = {
   goreBul,
   idyeGoreBul,
   ekle,
-}
+};

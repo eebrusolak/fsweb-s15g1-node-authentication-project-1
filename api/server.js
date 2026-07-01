@@ -3,9 +3,13 @@ const helmet = require("helmet");
 const cors = require("cors");
 const session = require("express-session");
 
+// Router'lar
+const usersRouter = require("./users/users-router");
+const authRouter = require("./auth/auth-router");
+
 /**
   Kullanıcı oturumlarını desteklemek için `express-session` paketini kullanın!
-  Kullanıcıların gizliliğini ihlal etmemek için, kullanıcılar giriş yapana kadar onlara cookie göndermeyin. 
+  Kullanıcıların gizliliğini ihlal etmemek için, kullanıcılar giriş yapana kadar onlara cookie göndermeyin.
   'saveUninitialized' öğesini false yaparak bunu sağlayabilirsiniz
   ve `req.session` nesnesini, kullanıcı giriş yapana kadar değiştirmeyin.
 
@@ -29,7 +33,11 @@ server.use(
     resave: false,
     saveUninitialized: false,
   })
-)
+);
+
+// Router'ları bağla
+server.use("/api/auth", authRouter);
+server.use("/api/users", usersRouter);
 
 server.get("/", (req, res) => {
   res.json({ api: "up" });
