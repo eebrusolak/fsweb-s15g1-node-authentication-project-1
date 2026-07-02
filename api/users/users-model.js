@@ -28,9 +28,9 @@ function idyeGoreBul(user_id) {
   yeni eklenen kullanıcıya çözümlenir { user_id, username }
  */
 async function ekle(user) {
-  const [user_id] = await db("users").insert(user, "user_id");
+  const [user_id] = await db("users").insert(user);
 
-  return idyeGoreBul(user_id);
+  return idyeGoreBul(ids[0]);
 }
 
 // Diğer modüllerde kullanılabilmesi için fonksiyonları "exports" nesnesine eklemeyi unutmayın.
