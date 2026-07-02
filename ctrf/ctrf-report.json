@@ -5,18 +5,18 @@
     },
     "summary": {
       "tests": 15,
-      "passed": 13,
-      "failed": 2,
+      "passed": 14,
+      "failed": 1,
       "pending": 0,
       "skipped": 0,
       "other": 0,
-      "start": 1782896502036,
-      "stop": 1782896504949
+      "start": 1782979454650,
+      "stop": 1782979459040
     },
     "tests": [
       {
         "name": "[0] sanity check",
-        "duration": 129,
+        "duration": 123,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -27,7 +27,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/login [1] geçerli kriterlerle doğru mesajı içeriyor",
-        "duration": 156,
+        "duration": 200,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -38,7 +38,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/login [2] kriterler geçerliyse \"cikolatacips\" cookiesi seçiliyor",
-        "duration": 105,
+        "duration": 120,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -49,7 +49,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/login [3] kriterler geçersizse cookie seçilmiyor (saveUninitialized=false)",
-        "duration": 20,
+        "duration": 90,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -60,7 +60,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/login [4] kriterler geçersizken doğru mesaj döndürülüyor",
-        "duration": 108,
+        "duration": 134,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -71,7 +71,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [5] veritabanında yeni kullanıcı oluşturulabiliyor",
-        "duration": 56,
+        "duration": 200,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -82,7 +82,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [6] kullanıcı parolaları başarılı kriptolanıyor",
-        "duration": 75,
+        "duration": 88,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -93,7 +93,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [7] kayıtta cookie seçilmiyor (saveUninitialized=false)",
-        "duration": 48,
+        "duration": 62,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -104,9 +104,9 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [8] kullanıcı nesnesi cevap veriliyor (user_id ve username)",
-        "duration": 47,
+        "duration": 79,
         "status": "failed",
-        "message": "Error: expect(received).toMatchObject(expected)\n\nMatcher error: received value must be a non-null object\n\nReceived has type:  string\nReceived has value: \"\"\n",
+        "message": "Error: expect(received).toMatchObject(expected)\n\n- Expected  - 2\n+ Received  + 4\n\n  Object {\n-   \"user_id\": 2,\n-   \"username\": \"sue\",\n+   \"message\": \"ids is not defined\",\n+   \"stack\": \"ReferenceError: ids is not defined\n+     at Object.ids [as ekle] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\api\\\\users\\\\users-model.js:33:22)\n+     at C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\api\\\\auth\\\\auth-router.js:51:29\",\n  }\n",
         "trace": "at Object.toMatchObject (C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js:63:24)\nat processTicksAndRejections (node:internal/process/task_queues:104:5)\n\n[object Object]",
         "rawStatus": "failed",
         "type": "unit",
@@ -117,7 +117,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [9] username kullanımdaysa doğru mesaj",
-        "duration": 21,
+        "duration": 34,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -128,7 +128,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [10] kısa şifre girildiyse doğru mesaj ve durum kodu",
-        "duration": 26,
+        "duration": 40,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -139,7 +139,7 @@
       },
       {
         "name": "server.js [GET] /api/auth/logout [11] oturum varsa yok ediliyor \"cikolatacips\" cookiesi artık etkisiz",
-        "duration": 116,
+        "duration": 138,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -150,7 +150,7 @@
       },
       {
         "name": "server.js [GET] /api/auth/logout [12] kullanıcı giriş yapmdıysa doğru mesaj",
-        "duration": 23,
+        "duration": 25,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -161,7 +161,7 @@
       },
       {
         "name": "server.js [GET] /api/users [13] kullanıcı giriş yapmadıysa doğru mesaj ve durum kodu",
-        "duration": 21,
+        "duration": 20,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -172,11 +172,9 @@
       },
       {
         "name": "server.js [GET] /api/users [14] oturumla eşleşen bir \"cikolatacips\" cookiesi varsa ",
-        "duration": 119,
-        "status": "failed",
-        "message": "Error: expect(received).toMatchObject(expected)\n\nExpected: [{\"user_id\": 1, \"username\": \"bob\"}]\nReceived: {\"message\": \"Cannot access 'users' before initialization\", \"stack\": \"ReferenceError: Cannot access 'users' before initialization\n    at C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\api\\\\users\\\\users-router.js:11:19\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\n    at next (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:144:13)\n    at next (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\api\\\\auth\\\\auth-middleware.js:5:5)\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\n    at next (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:144:13)\n    at Route.dispatch (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\n    at C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:284:15\n    at router.process_params (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:346:12)\n    at next (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:280:10)\n    at router.handle (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:175:3)\n    at router (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\n    at trim_prefix (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:328:13)\n    at C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:286:9\"}\n",
-        "trace": "at Object.toMatchObject (C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js:106:24)\nat processTicksAndRejections (node:internal/process/task_queues:104:5)\n\n[object Object]",
-        "rawStatus": "failed",
+        "duration": 122,
+        "status": "passed",
+        "rawStatus": "passed",
         "type": "unit",
         "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
         "retries": 0,
