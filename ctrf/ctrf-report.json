@@ -5,18 +5,18 @@
     },
     "summary": {
       "tests": 15,
-      "passed": 14,
-      "failed": 1,
+      "passed": 15,
+      "failed": 0,
       "pending": 0,
       "skipped": 0,
       "other": 0,
-      "start": 1782979454650,
-      "stop": 1782979459040
+      "start": 1782979813200,
+      "stop": 1782979818278
     },
     "tests": [
       {
         "name": "[0] sanity check",
-        "duration": 123,
+        "duration": 132,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -27,7 +27,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/login [1] geçerli kriterlerle doğru mesajı içeriyor",
-        "duration": 200,
+        "duration": 150,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -38,7 +38,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/login [2] kriterler geçerliyse \"cikolatacips\" cookiesi seçiliyor",
-        "duration": 120,
+        "duration": 107,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -49,7 +49,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/login [3] kriterler geçersizse cookie seçilmiyor (saveUninitialized=false)",
-        "duration": 90,
+        "duration": 22,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -60,7 +60,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/login [4] kriterler geçersizken doğru mesaj döndürülüyor",
-        "duration": 134,
+        "duration": 121,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -71,7 +71,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [5] veritabanında yeni kullanıcı oluşturulabiliyor",
-        "duration": 200,
+        "duration": 53,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -82,7 +82,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [6] kullanıcı parolaları başarılı kriptolanıyor",
-        "duration": 88,
+        "duration": 76,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -93,7 +93,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [7] kayıtta cookie seçilmiyor (saveUninitialized=false)",
-        "duration": 62,
+        "duration": 59,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -104,11 +104,9 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [8] kullanıcı nesnesi cevap veriliyor (user_id ve username)",
-        "duration": 79,
-        "status": "failed",
-        "message": "Error: expect(received).toMatchObject(expected)\n\n- Expected  - 2\n+ Received  + 4\n\n  Object {\n-   \"user_id\": 2,\n-   \"username\": \"sue\",\n+   \"message\": \"ids is not defined\",\n+   \"stack\": \"ReferenceError: ids is not defined\n+     at Object.ids [as ekle] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\api\\\\users\\\\users-model.js:33:22)\n+     at C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\api\\\\auth\\\\auth-router.js:51:29\",\n  }\n",
-        "trace": "at Object.toMatchObject (C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js:63:24)\nat processTicksAndRejections (node:internal/process/task_queues:104:5)\n\n[object Object]",
-        "rawStatus": "failed",
+        "duration": 50,
+        "status": "passed",
+        "rawStatus": "passed",
         "type": "unit",
         "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
         "retries": 0,
@@ -117,7 +115,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [9] username kullanımdaysa doğru mesaj",
-        "duration": 34,
+        "duration": 22,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -128,7 +126,7 @@
       },
       {
         "name": "server.js [POST] /api/auth/register [10] kısa şifre girildiyse doğru mesaj ve durum kodu",
-        "duration": 40,
+        "duration": 30,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -139,7 +137,7 @@
       },
       {
         "name": "server.js [GET] /api/auth/logout [11] oturum varsa yok ediliyor \"cikolatacips\" cookiesi artık etkisiz",
-        "duration": 138,
+        "duration": 120,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -150,7 +148,7 @@
       },
       {
         "name": "server.js [GET] /api/auth/logout [12] kullanıcı giriş yapmdıysa doğru mesaj",
-        "duration": 25,
+        "duration": 22,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -161,7 +159,7 @@
       },
       {
         "name": "server.js [GET] /api/users [13] kullanıcı giriş yapmadıysa doğru mesaj ve durum kodu",
-        "duration": 20,
+        "duration": 23,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
