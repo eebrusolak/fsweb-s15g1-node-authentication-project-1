@@ -1,6 +1,25 @@
 // `sinirli` middleware'ını `auth-middleware.js` dan require edin. Buna ihtiyacınız olacak!
+const router = require("express").Router();
+
+const users = require("./users-model");
+
+const {sinirli} = require("../auth/auth-middleware");
 
 
+router.get("/", sinirli, async (req, res, next) => {
+  try{
+    const users = await users.bul();
+
+    res.status(200).json(users);
+
+  }catch(err) {
+    next(err)
+  }
+})
+
+
+
+module.exports =router;
 /**
   [GET] /api/users
 

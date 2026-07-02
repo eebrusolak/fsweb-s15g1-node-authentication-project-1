@@ -4,15 +4,185 @@
       "name": "jest"
     },
     "summary": {
-      "tests": 0,
-      "passed": 0,
-      "failed": 0,
+      "tests": 15,
+      "passed": 13,
+      "failed": 2,
       "pending": 0,
       "skipped": 0,
       "other": 0,
-      "start": 1782895935488,
-      "stop": 1782895939478
+      "start": 1782896502036,
+      "stop": 1782896504949
     },
-    "tests": []
+    "tests": [
+      {
+        "name": "[0] sanity check",
+        "duration": 129,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js"
+      },
+      {
+        "name": "server.js [POST] /api/auth/login [1] geçerli kriterlerle doğru mesajı içeriyor",
+        "duration": 156,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/login"
+      },
+      {
+        "name": "server.js [POST] /api/auth/login [2] kriterler geçerliyse \"cikolatacips\" cookiesi seçiliyor",
+        "duration": 105,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/login"
+      },
+      {
+        "name": "server.js [POST] /api/auth/login [3] kriterler geçersizse cookie seçilmiyor (saveUninitialized=false)",
+        "duration": 20,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/login"
+      },
+      {
+        "name": "server.js [POST] /api/auth/login [4] kriterler geçersizken doğru mesaj döndürülüyor",
+        "duration": 108,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/login"
+      },
+      {
+        "name": "server.js [POST] /api/auth/register [5] veritabanında yeni kullanıcı oluşturulabiliyor",
+        "duration": 56,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/register"
+      },
+      {
+        "name": "server.js [POST] /api/auth/register [6] kullanıcı parolaları başarılı kriptolanıyor",
+        "duration": 75,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/register"
+      },
+      {
+        "name": "server.js [POST] /api/auth/register [7] kayıtta cookie seçilmiyor (saveUninitialized=false)",
+        "duration": 48,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/register"
+      },
+      {
+        "name": "server.js [POST] /api/auth/register [8] kullanıcı nesnesi cevap veriliyor (user_id ve username)",
+        "duration": 47,
+        "status": "failed",
+        "message": "Error: expect(received).toMatchObject(expected)\n\nMatcher error: received value must be a non-null object\n\nReceived has type:  string\nReceived has value: \"\"\n",
+        "trace": "at Object.toMatchObject (C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js:63:24)\nat processTicksAndRejections (node:internal/process/task_queues:104:5)\n\n[object Object]",
+        "rawStatus": "failed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/register"
+      },
+      {
+        "name": "server.js [POST] /api/auth/register [9] username kullanımdaysa doğru mesaj",
+        "duration": 21,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/register"
+      },
+      {
+        "name": "server.js [POST] /api/auth/register [10] kısa şifre girildiyse doğru mesaj ve durum kodu",
+        "duration": 26,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [POST] /api/auth/register"
+      },
+      {
+        "name": "server.js [GET] /api/auth/logout [11] oturum varsa yok ediliyor \"cikolatacips\" cookiesi artık etkisiz",
+        "duration": 116,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [GET] /api/auth/logout"
+      },
+      {
+        "name": "server.js [GET] /api/auth/logout [12] kullanıcı giriş yapmdıysa doğru mesaj",
+        "duration": 23,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [GET] /api/auth/logout"
+      },
+      {
+        "name": "server.js [GET] /api/users [13] kullanıcı giriş yapmadıysa doğru mesaj ve durum kodu",
+        "duration": 21,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [GET] /api/users"
+      },
+      {
+        "name": "server.js [GET] /api/users [14] oturumla eşleşen bir \"cikolatacips\" cookiesi varsa ",
+        "duration": 119,
+        "status": "failed",
+        "message": "Error: expect(received).toMatchObject(expected)\n\nExpected: [{\"user_id\": 1, \"username\": \"bob\"}]\nReceived: {\"message\": \"Cannot access 'users' before initialization\", \"stack\": \"ReferenceError: Cannot access 'users' before initialization\n    at C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\api\\\\users\\\\users-router.js:11:19\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\n    at next (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:144:13)\n    at next (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\api\\\\auth\\\\auth-middleware.js:5:5)\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\n    at next (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:144:13)\n    at Route.dispatch (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:114:3)\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\n    at C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:284:15\n    at router.process_params (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:346:12)\n    at next (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:280:10)\n    at router.handle (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:175:3)\n    at router (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\n    at trim_prefix (C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:328:13)\n    at C:\\\\Users\\\\ebrus\\\\OneDrive\\\\Desktop\\\\My Repos\\\\fsweb-s15g1-node-authentication-project-1\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:286:9\"}\n",
+        "trace": "at Object.toMatchObject (C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js:106:24)\nat processTicksAndRejections (node:internal/process/task_queues:104:5)\n\n[object Object]",
+        "rawStatus": "failed",
+        "type": "unit",
+        "filePath": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "C:\\Users\\ebrus\\OneDrive\\Desktop\\My Repos\\fsweb-s15g1-node-authentication-project-1\\codegrade_mvp.test.js > server.js > [GET] /api/users"
+      }
+    ]
   }
 }
